@@ -77,13 +77,6 @@ export default function RoutineDetails({ routine }: Props) {
           </Box>
         );
       })}
-      <Divider flexItem />
-      <Stack direction="row" spacing={1} alignItems="center">
-        <TimelineIcon color="primary" />
-        <Typography variant="caption" color="text.secondary">
-          Creada el {new Date(routine.created_at).toLocaleDateString()}
-        </Typography>
-      </Stack>
     </Stack>
   );
 }

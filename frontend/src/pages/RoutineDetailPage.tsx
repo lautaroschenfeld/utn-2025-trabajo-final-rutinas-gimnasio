@@ -76,6 +76,13 @@ export default function RoutineDetailPage() {
 
             <RoutineDetails routine={routine} />
             <RoutineCalendar routine={routine} />
+            <Divider flexItem sx={{ my: 2 }} />
+            <Stack direction="row" spacing={1} alignItems="center">
+              <TimelineIcon color="primary" />
+              <Typography variant="caption" color="text.secondary">
+                Creada el {new Date(routine.created_at).toLocaleDateString()}
+              </Typography>
+            </Stack>
           </Box>
         )}
       </Container>
