@@ -11,6 +11,7 @@ import { Link, Route, Routes, useLocation } from "react-router-dom";
 
 import HomePage from "./pages/HomePage";
 import RoutineDetailPage from "./pages/RoutineDetailPage";
+import logo from "./assets/logo.png";
 
 function App() {
   const location = useLocation();
@@ -30,13 +31,24 @@ function App() {
         sx={{ backdropFilter: "blur(6px)", borderBottom: "1px solid rgba(255,255,255,0.05)" }}
       >
         <Toolbar>
-          <Typography variant="h6" sx={{ flexGrow: 1, fontWeight: 800 }}>
-            Rutinas de Gimnasio
-          </Typography>
-          <Stack direction="row" spacing={1}>
-            <Button component={Link} to="/" color="inherit">
-              Inicio
-            </Button>
+          <Stack
+            direction="row"
+            spacing={1.5}
+            alignItems="center"
+            justifyContent="center"
+            sx={{ flexGrow: 1, textAlign: "center", cursor: "pointer" }}
+            component={Link}
+            to="/"
+          >
+            <Box
+              component="img"
+              src={logo}
+              alt="Logo"
+              sx={{ height: 28, width: "auto", display: "block", borderRadius: 0, objectFit: "contain" }}
+            />
+            <Typography variant="h6" sx={{ fontWeight: 600 }}>
+              Rutinas de Gimnasio
+            </Typography>
           </Stack>
         </Toolbar>
       </AppBar>

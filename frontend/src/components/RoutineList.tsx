@@ -40,7 +40,7 @@ export default function RoutineList({
   return (
     <Grid container spacing={2}>
       {routines.map((routine) => (
-        <Grid key={routine.id} size={{ xs: 12, md: 6 }}>
+        <Grid key={routine.id} size={{ xs: 12, sm: 6, md: 4 }}>
           <RoutineCard
             routine={routine}
             onView={() => onView(routine.id)}

@@ -82,6 +82,7 @@ export default function HomePage() {
   const [pageSize] = useState(6);
   const [stats, setStats] = useState<Stats | null>(null);
   const [openForm, setOpenForm] = useState(false);
+  const [hasAnyRoutine, setHasAnyRoutine] = useState(false);
 
   const debouncedTerm = useDebounce(searchTerm, 350);
 
@@ -92,6 +93,9 @@ export default function HomePage() {
         const data = await getRoutines(page, pageSize, selectedDay || undefined);
         setRoutines(data.items);
         setMeta(data.meta);
+        if (!selectedDay && data.meta.total > 0) {
+          setHasAnyRoutine(true);
+        }
       } catch (err) {
         console.error(err);
         setError("No se pudieron cargar las rutinas.");
@@ -108,6 +112,9 @@ export default function HomePage() {
       try {
         const data = await getStats();
         setStats(data);
+        if (data.total_routines > 0) {
+          setHasAnyRoutine(true);
+        }
       } catch (err) {
         console.error(err);
       }
@@ -316,7 +323,9 @@ export default function HomePage() {
               emptyMessage={
                 searchResults !== null
                   ? "No se encontraron rutinas con ese nombre."
-                  : "Aún no hay rutinas creadas."
+                  : selectedDay && hasAnyRoutine
+                    ? "Aún no hay rutinas creadas para este día."
+                    : "Aún no hay rutinas creadas."
               }
             />
             {meta && meta.pages > 1 && (

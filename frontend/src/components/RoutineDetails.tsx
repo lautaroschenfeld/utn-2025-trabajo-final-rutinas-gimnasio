@@ -31,7 +31,7 @@ export default function RoutineDetails({ routine }: Props) {
         return (
           <Box key={day} sx={{ p: 2, borderRadius: 2, border: "1px solid rgba(255,255,255,0.08)", background: "#1c1c1c" }}>
             <Stack direction="row" spacing={1} alignItems="center" mb={1.5}>
-              <Chip label={day} color="primary" variant="outlined" />
+              <Chip label={day} color="primary" variant="outlined" sx={{ borderRadius: 2 }} />
               <Typography variant="caption" color="text.secondary">
                 {exercises.length} ejercicio(s)
               </Typography>

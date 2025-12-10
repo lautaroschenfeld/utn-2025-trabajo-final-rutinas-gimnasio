@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, type MouseEvent } from "react";
 import {
   Alert,
   Box,
@@ -40,37 +40,45 @@ export default function RoutineDetailPage() {
     fetchData();
   }, [id]);
 
-  return (
-    <Container maxWidth="md" sx={{ py: 4 }}>
-      <Button startIcon={<ArrowBackIcon />} sx={{ mb: 2 }} onClick={() => navigate(-1)}>
-        Volver
-      </Button>
-      {loading && (
-        <Stack alignItems="center" justifyContent="center" sx={{ py: 6 }}>
-          <CircularProgress />
-        </Stack>
-      )}
-      {error && <Alert severity="error">{error}</Alert>}
-      {routine && (
-        <Box
-          sx={{
-            p: 3,
-            borderRadius: 3,
-            border: "1px solid rgba(255,255,255,0.05)",
-            background: "#1c1c1c",
-          }}
-        >
-          <Typography variant="h4" fontWeight={800} gutterBottom>
-            {routine.name}
-          </Typography>
-          <Typography variant="body1" color="text.secondary" mb={2}>
-            {routine.description || "Sin descripción"}
-          </Typography>
+  const handleBackdropClick = (event: MouseEvent<HTMLDivElement>) => {
+    if (event.target === event.currentTarget) {
+      navigate(-1);
+    }
+  };
 
-          <RoutineDetails routine={routine} />
-          <RoutineCalendar routine={routine} />
-        </Box>
-      )}
-    </Container>
+  return (
+    <Box sx={{ minHeight: "100vh" }} onClick={handleBackdropClick}>
+      <Container maxWidth="md" sx={{ py: 4 }}>
+        <Button startIcon={<ArrowBackIcon />} sx={{ mb: 2 }} onClick={() => navigate(-1)}>
+          Volver
+        </Button>
+        {loading && (
+          <Stack alignItems="center" justifyContent="center" sx={{ py: 6 }}>
+            <CircularProgress />
+          </Stack>
+        )}
+        {error && <Alert severity="error">{error}</Alert>}
+        {routine && (
+          <Box
+            sx={{
+              p: 3,
+              borderRadius: 2,
+              border: "1px solid rgba(255,255,255,0.05)",
+              background: "#1c1c1c",
+            }}
+          >
+            <Typography variant="h4" fontWeight={800} gutterBottom>
+              {routine.name}
+            </Typography>
+            <Typography variant="body1" color="text.secondary" mb={2}>
+              {routine.description || "Sin descripción"}
+            </Typography>
+
+            <RoutineDetails routine={routine} />
+            <RoutineCalendar routine={routine} />
+          </Box>
+        )}
+      </Container>
+    </Box>
   );
 }
