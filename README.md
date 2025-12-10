@@ -58,8 +58,8 @@ python -m app.scripts.seed
 
 ## Capturas de pantalla
 - Inicio  
-  ![Inicio](screenshots/Inicio.png)
+  ![Inicio](screenshots/inicio.png)
 - Rutina en detalle  
-  ![Rutina en detalle](screenshots/Detailed Routine.png)
+  ![Rutina en detalle](screenshots/detailed_routine.png)
 - Rutina con calendario semanal  
-  ![Calendario semanal](screenshots/Detailed Routine - Weekly Calendar.png)
+  ![Calendario semanal](screenshots/detailed_routine_weekly_calendar.png)
