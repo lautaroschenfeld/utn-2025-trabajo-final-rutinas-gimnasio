@@ -67,7 +67,7 @@ function App() {
               Planifica, ajusta y visualiza tus rutinas
             </Typography>
             <Typography variant="h6" color="text.secondary" maxWidth={600}>
-              CRUD completo, búsqueda en vivo y vista por día de la semana, todo en una sola interfaz.
+              Administra tus rutinas en un solo lugar: crea, edita, busca y organiza ejercicios por día, con el contexto de tu semana siempre a mano. Duplica lo que ya funciona, guarda tus ajustes y comparte o exporta cuando lo necesites.
             </Typography>
           </Box>
         </Container>
