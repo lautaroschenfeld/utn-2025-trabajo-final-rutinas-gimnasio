@@ -23,6 +23,7 @@ export default function RoutineCalendar({ routine }: Props) {
         mt: 3,
         background: "#1c1c1c",
         border: "1px solid rgba(255,255,255,0.08)",
+        borderRadius: 2,
       }}
     >
       <Typography variant="h6" fontWeight={700} gutterBottom>
