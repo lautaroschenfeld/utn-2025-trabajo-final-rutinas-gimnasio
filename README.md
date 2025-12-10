@@ -57,6 +57,9 @@ python -m app.scripts.seed
 - Frontend: `frontend/README.md`
 
 ## Capturas de pantalla
-- `screenshots/Inicio.png`
-- `screenshots/Detailed Routine.png`
-- `screenshots/Detailed Routine - Weekly Calendar.png`
+- Inicio  
+  ![Inicio](screenshots/Inicio.png)
+- Rutina en detalle  
+  ![Rutina en detalle](screenshots/Detailed Routine.png)
+- Rutina con calendario semanal  
+  ![Calendario semanal](screenshots/Detailed Routine - Weekly Calendar.png)
