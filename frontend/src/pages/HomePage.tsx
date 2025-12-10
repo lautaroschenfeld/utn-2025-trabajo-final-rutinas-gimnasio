@@ -301,7 +301,7 @@ export default function HomePage() {
                     sx={{
                       mt: 1,
                       p: 2,
-                      borderRadius: 3,
+                      borderRadius: 1,
                       background: "#1e1e1e",
                       border: "1px solid rgba(255,255,255,0.08)",
                     }}

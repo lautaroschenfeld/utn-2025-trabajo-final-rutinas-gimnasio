@@ -66,7 +66,7 @@ function App() {
               Planifica, ajusta y visualiza tus rutinas
             </Typography>
             <Typography variant="h6" color="text.secondary" maxWidth={1100}>
-              Administra tus rutinas en un solo lugar: crea, edita, busca y organiza ejercicios por día, con el contexto de tu semana siempre a mano. Duplica lo que ya funciona, guarda tus ajustes y comparte o exporta cuando lo necesites.
+              Administra tus rutinas en un solo lugar: crea, edita, busca y organiza ejercicios por día con tu semana a la vista. Duplica lo que funciona y exporta cuando lo necesites.
             </Typography>
           </Box>
         </Container>
