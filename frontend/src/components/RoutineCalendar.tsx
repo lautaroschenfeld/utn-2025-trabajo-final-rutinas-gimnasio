@@ -28,20 +28,23 @@ export default function RoutineCalendar({ routine }: Props) {
       <Typography variant="h6" fontWeight={700} gutterBottom>
         Calendario semanal
       </Typography>
-      <Grid container spacing={2}>
+      <Grid container spacing={2} alignItems="stretch">
         {DAYS.map((day) => {
           const dayExercises = routine.exercises
             .filter((ex) => ex.day_of_week === day)
             .sort((a, b) => a.order - b.order);
           return (
-            <Grid key={day} size={{ xs: 12, sm: 6, md: 4 }}>
+            <Grid key={day} size={{ xs: 12, sm: 6, md: 4 }} sx={{ display: "flex" }}>
               <Box
                 sx={{
+                  display: "flex",
+                  flexDirection: "column",
                   p: 2,
                   borderRadius: 2,
-                  minHeight: 120,
+                  minHeight: 160,
                   border: "1px solid rgba(255,255,255,0.08)",
                   background: "#1e1e1e",
+                  width: "100%",
                 }}
               >
                 <Typography variant="subtitle1" fontWeight={700} gutterBottom>
