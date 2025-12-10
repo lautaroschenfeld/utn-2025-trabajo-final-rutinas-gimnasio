@@ -57,7 +57,7 @@ export default function RoutineDetailPage() {
             p: 3,
             borderRadius: 3,
             border: "1px solid rgba(255,255,255,0.05)",
-            background: "linear-gradient(145deg, rgba(15,23,42,0.95), rgba(31,122,140,0.08))",
+            background: "#1c1c1c",
           }}
         >
           <Typography variant="h4" fontWeight={800} gutterBottom>

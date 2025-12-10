@@ -41,6 +41,16 @@ const theme = createTheme({
         },
       },
     },
+    MuiLink: {
+      styleOverrides: {
+        root: {
+          color: "#e04300",
+          "&:hover": {
+            color: "#ff5a1a",
+          },
+        },
+      },
+    },
     MuiCard: {
       styleOverrides: {
         root: {
