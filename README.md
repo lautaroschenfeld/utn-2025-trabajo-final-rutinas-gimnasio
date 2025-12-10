@@ -33,7 +33,7 @@ Swagger: http://localhost:8000/docs
 ```bash
 cd frontend
 npm install
-npm run dev  # puerto 5173
+npm run dev -- --host  # expone en localhost:5173
 ```
 Ajusta la URL del backend en `frontend/.env` (ej.: `VITE_API_URL=http://localhost:8000`).
 

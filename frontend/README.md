@@ -26,7 +26,7 @@ npm install
 ## Ejecución
 - Modo desarrollo (puerto 5173):
   ```bash
-  npm run dev
+  npm run dev -- --host
   ```
 - Build producción:
   ```bash
