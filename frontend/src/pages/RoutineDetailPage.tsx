@@ -7,8 +7,10 @@ import {
   Container,
   Stack,
   Typography,
+  Divider,
 } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import TimelineIcon from "@mui/icons-material/Timeline";
 import { useNavigate, useParams } from "react-router-dom";
 
 import { getRoutineById } from "../api/routines";

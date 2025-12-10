@@ -1,7 +1,6 @@
-import { Box, Chip, Divider, Stack, Typography } from "@mui/material";
+import { Box, Chip, Stack, Typography } from "@mui/material";
 import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
 import NotesIcon from "@mui/icons-material/Notes";
-import TimelineIcon from "@mui/icons-material/Timeline";
 
 import type { DayOfWeek, Routine } from "../types";
 
