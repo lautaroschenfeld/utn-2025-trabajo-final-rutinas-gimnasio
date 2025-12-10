@@ -91,7 +91,7 @@ def get_stats(session: Session = Depends(get_session)) -> StatsRead:
     return StatsRead(
         total_routines=total_routines,
         total_exercises=total_exercises,
-        exercises_per_day={day.value: count for day, count in per_day},
+        exercises_per_day={getattr(day, "value", day): count for day, count in per_day},
     )
 
 
