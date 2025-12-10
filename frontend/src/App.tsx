@@ -66,7 +66,7 @@ function App() {
             <Typography variant="h3" fontWeight={800} gutterBottom>
               Planifica, ajusta y visualiza tus rutinas
             </Typography>
-            <Typography variant="h6" color="text.secondary" maxWidth={600}>
+            <Typography variant="h6" color="text.secondary" maxWidth={780}>
               Administra tus rutinas en un solo lugar: crea, edita, busca y organiza ejercicios por día, con el contexto de tu semana siempre a mano. Duplica lo que ya funciona, guarda tus ajustes y comparte o exporta cuando lo necesites.
             </Typography>
           </Box>
