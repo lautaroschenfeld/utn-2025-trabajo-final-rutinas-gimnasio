@@ -1,0 +1,16 @@
+__pycache__/
+.venv/
+env/
+.env
+.env.*
+*.pyc
+*.pyo
+*.pyd
+.DS_Store
+node_modules/
+dist/
+build/
+coverage/
+.pytest_cache/
+*.log
+frontend copy/
