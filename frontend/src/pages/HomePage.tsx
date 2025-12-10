@@ -296,6 +296,25 @@ export default function HomePage() {
                     </Select>
                   </FormControl>
                 </Stack>
+                {stats && (
+                  <Box
+                    sx={{
+                      mt: 1,
+                      p: 2,
+                      borderRadius: 3,
+                      background: "#1e1e1e",
+                      border: "1px solid rgba(255,255,255,0.08)",
+                    }}
+                  >
+                    <Typography variant="subtitle1" fontWeight={700} mb={1}>
+                      Estadísticas
+                    </Typography>
+                    <Stack direction="row" spacing={1} flexWrap="wrap">
+                      <Chip label={`Rutinas: ${stats.total_routines}`} color="primary" />
+                      <Chip label={`Ejercicios: ${stats.total_exercises}`} color="primary" />
+                    </Stack>
+                  </Box>
+                )}
               </Stack>
             </Box>
 
@@ -337,26 +356,6 @@ export default function HomePage() {
                   color="primary"
                 />
               </Stack>
-            )}
-            {stats && (
-              <Paper
-                sx={{
-                  p: 2,
-                  background: "#1c1c1c",
-                  border: "1px solid rgba(255,255,255,0.08)",
-                }}
-              >
-                <Typography variant="subtitle1" fontWeight={700} gutterBottom>
-                  Estadísticas
-                </Typography>
-                <Stack direction="row" spacing={1} flexWrap="wrap">
-                  <Chip label={`Rutinas: ${stats.total_routines}`} color="primary" />
-                  <Chip label={`Ejercicios: ${stats.total_exercises}`} color="secondary" />
-                  {Object.entries(stats.exercises_per_day).map(([day, count]) => (
-                    <Chip key={day} label={`${day}: ${count}`} variant="outlined" />
-                  ))}
-                </Stack>
-              </Paper>
             )}
           </Stack>
         </Grid>

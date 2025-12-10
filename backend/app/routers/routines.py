@@ -31,8 +31,14 @@ def _paginate_query(
     base_query,
     page: int,
     page_size: int,
+    distinct_routine: bool = False,
 ):
-    total = session.exec(select(func.count()).select_from(base_query.subquery())).one()
+    count_stmt = (
+        select(func.count(func.distinct(Routine.id))).select_from(base_query.subquery())
+        if distinct_routine
+        else select(func.count()).select_from(base_query.subquery())
+    )
+    total = session.exec(count_stmt).one()
     items = (
         session.exec(
             base_query.offset((page - 1) * page_size).limit(page_size)
@@ -51,9 +57,15 @@ def list_routines(
 ) -> PaginatedRoutineRead:
     base_query = select(Routine).options(selectinload(Routine.exercises))
     if dia:
-        base_query = base_query.join(Routine.exercises).where(Exercise.day_of_week == dia)
+        base_query = (
+            base_query.join(Routine.exercises)
+            .where(Exercise.day_of_week == dia)
+            .group_by(Routine.id)
+        )
 
-    total, pages, routines = _paginate_query(session, base_query, page, page_size)
+    total, pages, routines = _paginate_query(
+        session, base_query, page, page_size, distinct_routine=bool(dia)
+    )
     return PaginatedRoutineRead.from_query(routines, total, page, page_size, pages)
 
 

@@ -56,3 +56,7 @@ python -m app.scripts.seed
 - Backend: `backend/README.md`
 - Frontend: `frontend/README.md`
 
+## Capturas de pantalla
+- `screenshots/Inicio.png`
+- `screenshots/Detailed Routine.png`
+- `screenshots/Detailed Routine - Weekly Calendar.png`
